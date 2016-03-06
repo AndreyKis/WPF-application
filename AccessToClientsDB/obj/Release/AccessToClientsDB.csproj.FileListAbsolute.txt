@@ -1,0 +1,43 @@
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.dll.config
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\Common.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\MySql.Data.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\mysql.data.entity.EF6.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\MySql.Web.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\Common.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.xml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.dll.config
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\Common.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\MySql.Data.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\mysql.data.entity.EF6.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\Common.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.xml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.dll.config
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\AccessToClientsDB.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\Common.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\MySql.Data.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\mysql.data.entity.EF6.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\Common.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.xml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\AccessToClientsDB\obj\Release\AccessToClientsDB.pdb

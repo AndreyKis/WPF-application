@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e98a8c5278e74df4a1d078a674a29151" Name="Diagram1" ZoomLevel="61">
+        <EntityTypeShape EntityType="clientdbModel.company" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="clientdbModel.department" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="clientdbModel.Company_Department" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="clientdbModel.contact" Width="1.5" PointX="10.25" PointY="3.125" />
+        <EntityTypeShape EntityType="clientdbModel.contactholder" Width="1.5" PointX="10.25" PointY="0.5" />
+        <EntityTypeShape EntityType="clientdbModel.privacylvl" Width="1.75" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="clientdbModel.user" Width="1.5" PointX="4.625" PointY="4.75" />
+        <AssociationConnector Association="clientdbModel.contact_holder" />
+        <AssociationConnector Association="clientdbModel.user_accessLvl" />
+        <EntityTypeShape EntityType="clientdbModel.company_contact" Width="1.5" PointX="10.25" PointY="7.5" />
+        <EntityTypeShape EntityType="clientdbModel.company_user1" Width="1.5" PointX="5.875" PointY="7.5" />
+        <AssociationConnector Association="clientdbModel.cuComppany_company" />
+        <AssociationConnector Association="clientdbModel.ccContact_contact" ></AssociationConnector>
+        <AssociationConnector Association="clientdbModel.cuUser_user" />
+        <AssociationConnector Association="clientdbModel.ccCompany_company1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

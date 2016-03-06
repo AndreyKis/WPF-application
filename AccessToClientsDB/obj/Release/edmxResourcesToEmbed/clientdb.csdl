@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="clientdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="companyId" />
+    </Key>
+    <Property Name="companyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cdepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="companyCode" Type="Int32" />
+    <Property Name="companyHead" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="companyDate" Type="DateTime" />
+    <Property Name="companyComment" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="companyPayment" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="companyEdition" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="department" Relationship="Self.Company_Department" FromRole="company" ToRole="department" />
+    <NavigationProperty Name="company_user" Relationship="clientdbModel.cuComppany_company" FromRole="company" ToRole="company_user1" />
+    <NavigationProperty Name="company_contact1" Relationship="clientdbModel.ccCompany_company1" FromRole="company" ToRole="company_contact" />
+  </EntityType>
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="departmentId" />
+    </Key>
+    <Property Name="departmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company" Relationship="Self.Company_Department" FromRole="department" ToRole="company" />
+  </EntityType>
+  <Association Name="Company_Department">
+    <End Role="department" Type="Self.department" Multiplicity="1" />
+    <End Role="company" Type="Self.company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department">
+        <PropertyRef Name="departmentId" />
+      </Principal>
+      <Dependent Role="company">
+        <PropertyRef Name="cdepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="clientdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="company" EntityType="Self.company" />
+    <EntitySet Name="department" EntityType="Self.department" />
+    <AssociationSet Name="Company_Department" Association="Self.Company_Department">
+      <End Role="department" EntitySet="department" />
+      <End Role="company" EntitySet="company" />
+    </AssociationSet>
+    <EntitySet Name="contact" EntityType="clientdbModel.contact" />
+    <EntitySet Name="contactholder" EntityType="clientdbModel.contactholder" />
+    <EntitySet Name="privacylvl" EntityType="clientdbModel.privacylvl" />
+    <EntitySet Name="user" EntityType="clientdbModel.user" />
+    <AssociationSet Name="contact_holder" Association="clientdbModel.contact_holder">
+      <End Role="contactholder" EntitySet="contactholder" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+    <AssociationSet Name="user_accessLvl" Association="clientdbModel.user_accessLvl">
+      <End Role="privacylvl" EntitySet="privacylvl" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <EntitySet Name="company_contact" EntityType="clientdbModel.company_contact" />
+    <EntitySet Name="company_user1Set" EntityType="clientdbModel.company_user1" />
+    <AssociationSet Name="cuComppany_company" Association="clientdbModel.cuComppany_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="company_user1" EntitySet="company_user1Set" />
+    </AssociationSet>
+    <AssociationSet Name="ccContact_contact" Association="clientdbModel.ccContact_contact">
+      <End Role="contact" EntitySet="contact" />
+      <End Role="company_contact" EntitySet="company_contact" />
+    </AssociationSet>
+    <AssociationSet Name="cuUser_user" Association="clientdbModel.cuUser_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="company_user1" EntitySet="company_user1Set" />
+    </AssociationSet>
+    <AssociationSet Name="ccCompany_company1" Association="clientdbModel.ccCompany_company1">
+      <End Role="company" EntitySet="company" />
+      <End Role="company_contact" EntitySet="company_contact" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="contactId" />
+    </Key>
+    <Property Name="contactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contact1" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="holderId" Type="Int32" Nullable="false" />
+    <Property Name="contactType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contactholder" Relationship="clientdbModel.contact_holder" FromRole="contact" ToRole="contactholder" />
+    <NavigationProperty Name="company_contact" Relationship="clientdbModel.ccContact_contact" FromRole="contact" ToRole="company_contact" />
+  </EntityType>
+  <EntityType Name="contactholder">
+    <Key>
+      <PropertyRef Name="contactHolderId" />
+    </Key>
+    <Property Name="contactHolderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="level" Type="SByte" Nullable="false" />
+    <NavigationProperty Name="contact" Relationship="clientdbModel.contact_holder" FromRole="contactholder" ToRole="contact" />
+  </EntityType>
+  <EntityType Name="privacylvl">
+    <Key>
+      <PropertyRef Name="privacyLvlId" />
+    </Key>
+    <Property Name="privacyLvlId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="user" Relationship="clientdbModel.user_accessLvl" FromRole="privacylvl" ToRole="user" />
+    <Property Name="groupNumber" Type="Int16" Nullable="false" />
+    <Property Name="persInfo" Type="Int16" Nullable="false" />
+    <Property Name="redact" Type="Int16" Nullable="false" />
+    <Property Name="letter" Type="Int16" Nullable="false" />
+    <Property Name="agreement" Type="Int16" Nullable="false" />
+    <Property Name="layout" Type="Int16" Nullable="false" />
+    <Property Name="payment" Type="Int16" Nullable="false" />
+    <Property Name="act" Type="Int16" Nullable="false" />
+    <Property Name="columnName" Type="Int16" Nullable="false" />
+    <Property Name="columnDepartment" Type="Int16" Nullable="false" />
+    <Property Name="columnCode" Type="Int16" Nullable="false" />
+    <Property Name="columnFullName" Type="Int16" Nullable="false" />
+    <Property Name="columnContacts" Type="Int16" Nullable="false" />
+    <Property Name="columnState" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="patronymic" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="accessLvl" Type="Int32" Nullable="false" />
+    <Property Name="group" Type="Int32" />
+    <NavigationProperty Name="privacylvl" Relationship="clientdbModel.user_accessLvl" FromRole="user" ToRole="privacylvl" />
+    <NavigationProperty Name="company_user" Relationship="clientdbModel.cuUser_user" FromRole="user" ToRole="company_user1" />
+  </EntityType>
+  <Association Name="contact_holder">
+    <End Type="clientdbModel.contactholder" Role="contactholder" Multiplicity="1" />
+    <End Type="clientdbModel.contact" Role="contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contactholder">
+        <PropertyRef Name="contactHolderId" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="holderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_accessLvl">
+    <End Type="clientdbModel.privacylvl" Role="privacylvl" Multiplicity="1" />
+    <End Type="clientdbModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="privacylvl">
+        <PropertyRef Name="privacyLvlId" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="accessLvl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="company_contact">
+    <Key>
+      <PropertyRef Name="company_contactId" />
+    </Key>
+    <Property Name="company_contactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ccContactId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contact" Relationship="clientdbModel.ccContact_contact" FromRole="company_contact" ToRole="contact" />
+    <Property Name="ccCompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="company1" Relationship="clientdbModel.ccCompany_company1" FromRole="company_contact" ToRole="company" />
+  </EntityType>
+  <EntityType Name="company_user1">
+    <Key>
+      <PropertyRef Name="company_userId" />
+    </Key>
+    <Property Name="company_userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cucompanyId" Type="Int32" Nullable="false" />
+    <Property Name="cuuserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="company" Relationship="clientdbModel.cuComppany_company" FromRole="company_user1" ToRole="company" />
+    <NavigationProperty Name="user" Relationship="clientdbModel.cuUser_user" FromRole="company_user1" ToRole="user" />
+  </EntityType>
+  <Association Name="cuComppany_company">
+    <End Type="clientdbModel.company" Role="company" Multiplicity="1" />
+    <End Type="clientdbModel.company_user1" Role="company_user1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companyId" />
+      </Principal>
+      <Dependent Role="company_user1">
+        <PropertyRef Name="cucompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ccContact_contact">
+    <End Type="clientdbModel.contact" Role="contact" Multiplicity="1" />
+    <End Type="clientdbModel.company_contact" Role="company_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contact">
+        <PropertyRef Name="contactId" />
+      </Principal>
+      <Dependent Role="company_contact">
+        <PropertyRef Name="ccContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cuUser_user">
+    <End Type="clientdbModel.user" Role="user" Multiplicity="1" />
+    <End Type="clientdbModel.company_user1" Role="company_user1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="company_user1">
+        <PropertyRef Name="cuuserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ccCompany_company1">
+    <End Type="clientdbModel.company" Role="company" Multiplicity="1" />
+    <End Type="clientdbModel.company_contact" Role="company_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companyId" />
+      </Principal>
+      <Dependent Role="company_contact">
+        <PropertyRef Name="ccCompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

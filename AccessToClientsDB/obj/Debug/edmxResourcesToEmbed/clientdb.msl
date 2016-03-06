@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище clientdbModelContainer" CdmEntityContainer="clientdbEntities">
+    <EntitySetMapping Name="company">
+      <EntityTypeMapping TypeName="clientdbModel.company">
+        <MappingFragment StoreEntitySet="company">
+          <ScalarProperty Name="companyId" ColumnName="companyId" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="cdepartmentId" ColumnName="cdepartmentId" />
+          <ScalarProperty Name="companyCode" ColumnName="companyCode" />
+          <ScalarProperty Name="companyHead" ColumnName="companyHead" />
+          <ScalarProperty Name="companyDate" ColumnName="companyDate" />
+          <ScalarProperty Name="companyComment" ColumnName="companyComment" />
+          <ScalarProperty Name="companyPayment" ColumnName="companyPayment" />
+          <ScalarProperty Name="companyEdition" ColumnName="companyEdition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="department">
+      <EntityTypeMapping TypeName="clientdbModel.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact">
+      <EntityTypeMapping TypeName="clientdbModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="contactType" ColumnName="contactType" />
+          <ScalarProperty Name="holderId" ColumnName="holderId" />
+          <ScalarProperty Name="contact1" ColumnName="contact" />
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contactholder">
+      <EntityTypeMapping TypeName="clientdbModel.contactholder">
+        <MappingFragment StoreEntitySet="contactholder">
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="contactHolderId" ColumnName="contactHolderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="privacylvl">
+      <EntityTypeMapping TypeName="clientdbModel.privacylvl">
+        <MappingFragment StoreEntitySet="privacylvl">
+          <ScalarProperty Name="columnState" ColumnName="columnState" />
+          <ScalarProperty Name="columnContacts" ColumnName="columnContacts" />
+          <ScalarProperty Name="columnFullName" ColumnName="columnFullName" />
+          <ScalarProperty Name="columnCode" ColumnName="columnCode" />
+          <ScalarProperty Name="columnDepartment" ColumnName="columnDepartment" />
+          <ScalarProperty Name="columnName" ColumnName="columnName" />
+          <ScalarProperty Name="act" ColumnName="act" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+          <ScalarProperty Name="layout" ColumnName="layout" />
+          <ScalarProperty Name="agreement" ColumnName="agreement" />
+          <ScalarProperty Name="letter" ColumnName="letter" />
+          <ScalarProperty Name="redact" ColumnName="redact" />
+          <ScalarProperty Name="persInfo" ColumnName="persInfo" />
+          <ScalarProperty Name="groupNumber" ColumnName="groupNumber" />
+          <ScalarProperty Name="privacyLvlId" ColumnName="privacyLvlId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="clientdbModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="accessLvl" ColumnName="accessLvl" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_contact">
+      <EntityTypeMapping TypeName="clientdbModel.company_contact">
+        <MappingFragment StoreEntitySet="company_contact">
+          <ScalarProperty Name="ccCompanyId" ColumnName="ccCompanyId" />
+          <ScalarProperty Name="ccContactId" ColumnName="ccContactId" />
+          <ScalarProperty Name="company_contactId" ColumnName="company_contactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_user1Set">
+      <EntityTypeMapping TypeName="clientdbModel.company_user1">
+        <MappingFragment StoreEntitySet="company_user">
+          <ScalarProperty Name="cuuserID" ColumnName="cuuserID" />
+          <ScalarProperty Name="cucompanyId" ColumnName="cucompanyId" />
+          <ScalarProperty Name="company_userId" ColumnName="company_userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

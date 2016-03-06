@@ -1,0 +1,140 @@
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.exe.config
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.exe
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\AccessToClientsDB.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\Common.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\AccessToClientsDB.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\Common.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\AddToDB.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\PaymentControl.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrepareAgreement.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\AddToDB.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\MainWindow.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\PaymentControl.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrepareAgreement.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\App.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI_MarkupCompile.cache
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI_MarkupCompile.lref
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\MainWindow.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.g.resources
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.Properties.Resources.resources
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.csproj.GenerateResource.Cache
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.exe
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\CustomCalendar.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\CustomCalendar.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\DataGridStyles.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLetter.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLetter.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\SendButton.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\SendButton.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLayout.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLayout.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\Act.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\Act.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\Telephones.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\Telephones.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\recordState.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\recordState.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\AdminSettings.baml
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\obj\Release\AdminSettings.g.cs
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.xml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.exe.config
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.exe
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.exe
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\AccessToClientsDB.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\Common.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\MySql.Data.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\mysql.data.entity.EF6.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\AccessToClientsDB.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\Common.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.xml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Act.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AddToDB.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AdminSettings.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLayout.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLetter.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PaymentControl.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrepareAgreement.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrivacySettings.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\SendButton.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Telephones.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Act.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AddToDB.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AdminSettings.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLayout.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLetter.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CustomCalendar.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\MainWindow.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PaymentControl.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrepareAgreement.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrivacySettings.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\SendButton.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Telephones.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\App.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI_MarkupCompile.cache
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI_MarkupCompile.lref
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CustomCalendar.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\DataGridStyles.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\MainWindow.baml
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.g.resources
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.Properties.Resources.resources
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.exe.config
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.exe
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.exe
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\GUI.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\AccessToClientsDB.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\Common.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\MySql.Data.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\mysql.data.entity.EF6.dll
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\AccessToClientsDB.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\Common.pdb
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.xml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Act.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AddToDB.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AdminSettings.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLayout.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLetter.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PaymentControl.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrepareAgreement.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrivacySettings.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\SendButton.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Telephones.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Act.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AddToDB.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\AdminSettings.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLayout.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CreateLetter.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CustomCalendar.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\MainWindow.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PaymentControl.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrepareAgreement.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\PrivacySettings.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\SendButton.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\Telephones.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\App.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI_MarkupCompile.cache
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI_MarkupCompile.lref
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\CustomCalendar.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\DataGridStyles.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\MainWindow.baml
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.g.resources
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.Properties.Resources.resources
+C:\Users\User\Desktop\Работа\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\GUI\obj\Release\GUI.csproj.GenerateResource.Cache

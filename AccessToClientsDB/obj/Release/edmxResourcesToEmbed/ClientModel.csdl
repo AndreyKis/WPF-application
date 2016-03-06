@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="clientdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="idCompany" />
+    </Key>
+    <Property Name="idCompany" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDepartment" Type="Int32" Nullable="false" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="edition" Type="Int32" />
+    <NavigationProperty Name="record" Relationship="Self.recComp_comp" FromRole="company" ToRole="record" />
+    <NavigationProperty Name="telephone" Relationship="Self.telephone_company" FromRole="company" ToRole="telephone" />
+  </EntityType>
+  <EntityType Name="record">
+    <Key>
+      <PropertyRef Name="idRecord" />
+    </Key>
+    <Property Name="idRecord" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCompany" Type="Int32" Nullable="false" />
+    <Property Name="Head" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" />
+    <Property Name="Comment" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Payment" Type="Int32" />
+    <NavigationProperty Name="company" Relationship="Self.recComp_comp" FromRole="record" ToRole="company" />
+  </EntityType>
+  <EntityType Name="telephone">
+    <Key>
+      <PropertyRef Name="idTelephone" />
+    </Key>
+    <Property Name="idTelephone" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryCode" Type="Int32" Nullable="false" />
+    <Property Name="cityCode" Type="Int32" Nullable="false" />
+    <Property Name="tel" Type="Int32" Nullable="false" />
+    <Property Name="idCompany" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="company" Relationship="Self.telephone_company" FromRole="telephone" ToRole="company" />
+  </EntityType>
+  <Association Name="recComp_comp">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="record" Type="Self.record" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="idCompany" />
+      </Principal>
+      <Dependent Role="record">
+        <PropertyRef Name="idCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="telephone_company">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="telephone" Type="Self.telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="idCompany" />
+      </Principal>
+      <Dependent Role="telephone">
+        <PropertyRef Name="idCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="clientdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="company" EntityType="Self.company" />
+    <EntitySet Name="record" EntityType="Self.record" />
+    <EntitySet Name="telephone" EntityType="Self.telephone" />
+    <AssociationSet Name="recComp_comp" Association="Self.recComp_comp">
+      <End Role="company" EntitySet="company" />
+      <End Role="record" EntitySet="record" />
+    </AssociationSet>
+    <AssociationSet Name="telephone_company" Association="Self.telephone_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="telephone" EntitySet="telephone" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

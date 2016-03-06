@@ -1,0 +1,14 @@
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\Common\bin\Debug\Common.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\Common\bin\Debug\Common.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.dll
+C:\Users\Andrey\Desktop\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект1.0\Фриланс Проект\ClientService\Client\Common\bin\Debug\Common.dll
+C:\Users\Andrey\Desktop\Фриланс Проект1.0\Фриланс Проект\ClientService\Client\Common\bin\Debug\Common.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект1.0\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.dll
+C:\Users\Andrey\Desktop\Фриланс Проект1.0\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.pdb
+C:\Users\Andrey\Desktop\Фриланс Проект1.0\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\Common\bin\Debug\Common.dll
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\Common\bin\Debug\Common.pdb
+C:\Users\Andrey\Desktop\Вечный_проект\Фриланс Проект_2.0(рабочая)\Фриланс Проект\ClientService\Client\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

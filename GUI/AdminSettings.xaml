@@ -1,0 +1,516 @@
+﻿<Page x:Class="GUI.AdminSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+	Title="AdminSettings">
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="691*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="Auto" Margin="0,0,500,0" VerticalAlignment="Stretch">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="UsersBtn" Click="UsersBtn_OnClick" Content="ПОЛЬЗОВАТЕЛИ" Grid.Row="0" Grid.Column="0" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+            <Button Name="ManualsBtn" Click="ManualsBtn_OnClick" Content="СПРАВОЧНИКИ" Grid.Row="0" Grid.Column="1" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+            <Button Name="PrivaciesBtn" Click="PrivaciesBtn_OnClick" Content="ПОЛИТИКИ" Grid.Row="0" Grid.Column="2" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="AddUserBtn" Click="AddUserBtn_OnClick" Content="ДОБАВИТЬ"  Grid.Row="0" Grid.Column="0" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+            <Button Name="ChangeUserBtn" Click="ChangeUserBtn_OnClick" Content="ИЗМЕНИТЬ" Grid.Row="0" Grid.Column="1" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+            <Button Name="DeleteUserBtn" Click="DeleteUserBtn_OnClick" Content="УДАЛИТЬ" Grid.Row="0" Grid.Column="2" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="76*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="76*"/>
+                <ColumnDefinition Width="77*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="PersInfoBtn" Click="PersInfoBtn_OnClick" Content="ПЕРС ИНФО" Grid.Row="0" Grid.Column="0" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+            <Button Name="ColumnsBtn" Click="ColumnsBtn_OnClick" Content="КОЛОНКИ"   Grid.Row="0" Grid.Column="1" 
+                    HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+            <Button Name="EditBtn" Click="EditBtn_OnClick" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Image Source="Resources\addToDB.png" Height="35"></Image>
+            </Button>
+            <Button Name="MailBtn" Click="MailBtn_OnClick" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"/>
+            <Button Name="AgreementBtn" Click="AgreementBtn_OnClick" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"/>
+            <Button Name="LayoutBtn" Click="LayoutBtn_OnClick" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"/>
+            <Button Name="PaymentBtn" Click="PaymentBtn_OnClick" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"/>
+            <Button Name="ActBtn" Click="ActBtn_OnClick" Grid.Row="0" Grid.Column="7" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"/>
+            <Button Name="BlockBtn" Click="BlockBtn_OnClick" Grid.Row="0" Grid.Column="8" HorizontalAlignment="Stretch" 
+                    Margin="0,0,0,0"/>
+        </Grid>
+        <DataGrid Name="UsersDgrv" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="2" CanUserAddRows="False"
+                  VerticalAlignment="Stretch" AutoGenerateColumns="False" GridLinesVisibility="None" HeadersVisibility="None" 
+                  Background="White">
+            <DataGrid.Resources>
+                <!--<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                   Color="White"/>-->
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns> 
+                <DataGridTemplateColumn Width="1*">
+                    <!--="Name"-->
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ChooseUserBtn" Click="ChooseUserBtn_OnClick" Content="{Binding FullName}" 
+                                    VerticalAlignment="Stretch" Height="25" HorizontalAlignment="Stretch" BorderThickness="2" 
+                                    Background="White">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Style.Triggers>
+                                            
+                                            <DataTrigger Binding="{Binding AccessLvl}" Value="2">
+                                                <Setter Property="Button.Margin" Value="40,10,25,0"/>
+                                            </DataTrigger>
+                                            
+                                            
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="White"/>
+                                            </Trigger>
+                                            
+                                        </Style.Triggers>
+                                        <Style.Setters>
+                                            <Setter Property="Margin" Value="15,15,50,0"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border Background="{TemplateBinding Background}" BorderBrush="Gray" 
+                                                                BorderThickness="1">
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style.Setters>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="NameBtn" Click="NameBtn_OnClick" MinHeight="5" Content="НАЗВАНИЕ" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+                <Button Name="DepartmentBtn" Click="DepartmentBtn_OnClick" MinHeight="16" Content="ОТРАСЛЬ" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+                <Button Name="CodeBtn" Click="CodeBtn_OnClick" MinHeight="16" Content="КОД (ЭДР)" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+                <Button Name="FullNameBtn" Click="FullNameBtn_OnClick" MinHeight="16" Content="ФИО" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+                <Button Name="ContactsBtn" Click="ContactsBtn_OnClick" MinHeight="16" Content="ТЕЛ/E-MAIL" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+                <Button Name="DateBtn" Click="DateBtn_OnClick" Content="ДАТА/ВРЕМЯ" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+                <Button Name="StateBtn" Click="StateBtn_OnClick" MinHeight="16" Content="СОСТОЯНИЕ" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Stretch" 
+                    Padding="0,-1,0,1" Margin="5,2,0,2" MinWidth="5" Visibility="Collapsed"/>
+            </Grid>
+            
+            <Grid Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="70*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="ОТРАСЛЬ" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="КОД (ЭДР)" Grid.Row="0" Grid.Column="2" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="ФИО" Grid.Row="0" Grid.Column="3" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="ТЕЛ/E-MAIL" Grid.Row="0" Grid.Column="4" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="ДАТА/ВРЕМЯ" Grid.Row="0" Grid.Column="5" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="СОСТОЯНИЕ" Grid.Row="0" Grid.Column="6"  Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="СОСТОЯНИЕ" Grid.Row="0" Grid.Column="7" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="СОСТОЯНИЕ" Grid.Row="0" Grid.Column="8" Margin="5,0,0,0"
+                       FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <DataGrid Name="RightsDgrv" Background="White" Grid.Row="2" Grid.Column="0" CanUserAddRows="False"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False"
+                      HeadersVisibility="None">
+                <DataGrid.Columns >
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text=""></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock VerticalAlignment="Center" Margin="0, 0, 0, 0" 
+                                           Text="{Binding GroupName}" TextAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="FirstColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[0]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="SecondColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[1]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="ThirdColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[2]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="ForthColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[3]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="FifthColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[4]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="SixthColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[5]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="SeventhColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <Image Height="20" Width="20">
+                                            <Image.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Rights[6]}" Value="True">
+                                                            <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="70*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="EigthColumnHeader"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button VerticalAlignment="Center" Margin="0, 0, 0, 0" BorderThickness="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <StackPanel>
+                                            <Image Height="20" Width="20">
+                                                <Image.Style>
+                                                    <Style>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Rights[6]}" Value="True">
+                                                                <Setter Property="Image.Source" Value="Resources\true.bmp"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Image.Style>
+                                            </Image>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Canvas Grid.ColumnSpan="10" HorizontalAlignment="Stretch" Background="Gray" Height="1" VerticalAlignment="Top" Grid.Row="1"/>
+        </Grid>
+
+    </Grid>
+</Page>

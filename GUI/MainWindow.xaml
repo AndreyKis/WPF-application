@@ -1,0 +1,694 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:y="clr-namespace:GUI"
+        WindowState="Maximized"
+        Name="Window"
+         WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Width="1230" Height="768"
+        MinHeight="700"
+        
+        WindowStyle="None"
+        
+        Background="White"
+        Loaded="Window_Loaded">
+    <!--AllowsTransparency="True"-->
+
+
+    <Window.Resources>
+
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+
+
+        <!--<Style x:Key="AnnotationStyle" TargetType="TextBlock">
+            
+            <Setter Property="Background" Value="#70FFFFFF" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#CCFFFFFF" />
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>-->
+
+
+        <Style x:Key="RowStyle" TargetType="DataGridRow">
+
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Background" Value="#ffefefef"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected"
+                        Value="True">
+                    <Setter Property="BorderBrush"
+                        Value="Blue" />
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness"
+                        Value="0,3,0,3"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+
+        <!--
+            Perspective color:
+            Background="#CCe3e3e3"
+            -->
+        <Style x:Key="CellStyle" TargetType="DataGridCell">
+
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="2,1,0,1"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Border BorderBrush="White" BorderThickness="2,2,0,0">
+                            <Border BorderBrush="Silver" BorderThickness="1">
+                                <ContentPresenter />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid ShowGridLines="False" Margin="0,5,0,0">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition Width="170"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"  />
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <ScrollViewer Name="DgrvScroll" Grid.Row="3" Margin="3,10,2,3" 
+                      ScrollChanged="DgrvScroll_OnScrollChanged">
+            <ScrollViewer.Resources>
+                <Style TargetType="{x:Type ScrollBar}">
+                    <Setter Property="Stylus.IsFlicksEnabled" Value="True" />
+                    <Style.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="Width" Value="17" />
+                            <Setter Property="MinWidth" Value="10" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+
+            </ScrollViewer.Resources>
+            <DataGrid Name="Dgrv" Margin="0,0,0,0" HorizontalScrollBarVisibility="Visible"
+                      ColumnWidth="*" AutoGenerateColumns="False" RowHeight="62" BorderThickness="0"
+                      HeadersVisibility="None" GridLinesVisibility="None" SelectionMode="Single" 
+                      SelectionChanged="Dgrv_OnSelectionChanged" SelectionUnit="FullRow"
+                      ItemsSource="{Binding MyData}" RowStyle="{StaticResource RowStyle}" CellStyle="{StaticResource CellStyle}"
+                      HorizontalGridLinesBrush="White"  VerticalGridLinesBrush="AntiqueWhite"
+                      VerticalScrollBarVisibility="Hidden" CanUserAddRows="False" PreviewMouseWheel="Dgrv_OnPreviewMouseWheel"
+                  >
+                <DataGrid.Columns >
+                    <DataGridTemplateColumn Width="40">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate x:Name="someCell">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock VerticalAlignment="Center" Margin="0, 20, 0, 0" 
+                                           Text="{Binding ID}" TextAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!--<DataGridTemplateColumn Width="190">
+                
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding CompanyName}" FontSize="16" TextWrapping="Wrap"/>
+                            <Grid Height="38" Margin="0,10,0,4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"  />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ComboBox Name="typeCmbBx" Margin="3, 20, -43,0"/>
+                                <ComboBox Grid.Column="1" Name="codeCmbBx" Margin="45, 20, 3, 0"/>
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>-->
+
+
+                    <DataGridTemplateColumn Width="210">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"  />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding CompanyName}" HorizontalAlignment="Left" VerticalAlignment="Top"  
+                                       Grid.Row="0" Grid.ColumnSpan="2" FontSize="16"/>
+                                    <ComboBox Name="typeCmbBx" Grid.Row="1" Margin="0,10,-64,0" Grid.Column="0"/>
+                                    <ComboBox Name="codeCmbBx" Grid.Row="1" Margin="65,10,0,0" Grid.Column="1"/>
+                                </Grid>
+
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn Width="150">
+                        <DataGridTemplateColumn.CellTemplate>
+
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock FontSize="14" Text="{Binding HeadName}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="40">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="{Binding Contacts[0].CountryCode}" 
+                                               TextAlignment="Center" Margin="0, 8, 0, 0"/>
+                                    <Canvas Background="Black" Height="1" Margin="8,5,8,0"/>
+                                    <TextBlock FontWeight="Bold" Text="{Binding Contacts[0].OperatorCode}" TextAlignment="Center" 
+                                               Margin="0, 5, 0, 0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="150">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <Border.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.BorderBrush" Value="Blue" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Button Name="telBtn" FontWeight="Bold" MouseDoubleClick="TelBtn_OnMouseDoubleClick">
+                                        <StackPanel>
+                                            <TextBlock>
+                                                <TextBlock.Style>
+                                                    <Style>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Contacts[0].ContactType}" Value="0">
+                                                                <Setter Property="TextBlock.Text" Value="{Binding Contacts[0].RealContact}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBlock>
+                                                <TextBlock.Style>
+                                                    <Style>
+
+
+
+
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Contacts[1].ContactType}" Value="0">
+                                                                <Setter Property="TextBlock.Text" Value="{Binding Contacts[1].RealContact}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBlock>
+                                                <TextBlock.Style>
+                                                    <Style>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Contacts[2].ContactType}" Value="0">
+                                                                <Setter Property="TextBlock.Text" Value="{Binding Contacts[2].RealContact}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <!--<TextBlock Text="{Binding Telephone.Telephones}" />
+                                            <TextBlock Text="{Binding Telephone.Telephones}" />-->
+                                        </StackPanel>
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="Transparent"/>
+
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="40">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <Border.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.BorderBrush" Value="Blue" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Button Name="SetDateBtn" MouseDoubleClick="SetDateBtn_OnMouseDoubleClick">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="Transparent"/>
+
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" Margin="0,8,0,0" 
+                                                       Text="{Binding Date}" />
+                                            <Canvas Background="Black" Height="1" Margin="4,5,4,0"/>
+                                            <TextBlock FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5,0,0" 
+                                                       Text="{Binding Time}" />
+                                        </StackPanel>
+                                    </Button>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="1*">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <Border.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.BorderBrush" Value="Blue" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Button>
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="Transparent"/>
+
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Comment}" />
+
+                                        </StackPanel>
+                                    </Button>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="92" Header="BtnsColumn">
+                        <!--="Name"-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <Border.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.BorderBrush" Value="Blue" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Grid Background="White">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"  />
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Button Name="PrepLetterBtn" Background="Gainsboro" Grid.Row="0" Grid.Column="0" 
+                                            Margin="0, 1, 2, 1" FontSize="16" Click="PrepLetterBtn_OnClick">
+                                            <Image Source="Resources/pencil.png" Height="18"></Image>
+                                        </Button>
+
+                                        <Button Name="DButton" Content="С" Background="Gainsboro" Grid.Row="0" Grid.Column="1" 
+                                    Margin="0, 1, 2, 1" FontSize="17" Click="DButton_OnClick"/>
+                                        <Button Name="PaymenCntlBtn"  Content="$" Background="Gainsboro" Grid.Row="0" Grid.Column="2" 
+                                    Margin="0, 1, 2, 1" FontSize="17" Click="PaymentCntrlBtn_OnClick"/>
+                                        <Button Name="SendBtn"  Content="@" Background="Gainsboro" Grid.Row="1" Grid.Column="0" 
+                                    Margin="0, 1, 2, 1" FontSize="17" Click="SendBtn_OnClick"/>
+                                        <Button Name="LayoutBtn"  Content="М" Background="Gainsboro" Grid.Row="1" Grid.Column="1" 
+                                    Margin="0, 1, 2, 1" FontSize="17" Click="LayoutBtn_OnClick"/>
+                                        <Button Name="ActBtn"  Content="А" Background="Gainsboro" Grid.Row="1" Grid.Column="2" 
+                                    Margin="0, 1, 2, 1" FontSize="17" Click="ActBtn_OnClick"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+
+        <Frame  Grid.Column="0" Name="TelFrame" BorderBrush="Blue" NavigationUIVisibility="Hidden" Visibility="Hidden" 
+                HorizontalAlignment="Left" Height="235" Margin="406,11,0,0" Grid.Row="3" VerticalAlignment="Top" Width="228"/>
+
+        <Frame Grid.Column="0" Grid.Row="3" Name="Frame2" BorderBrush="Blue" NavigationUIVisibility="Hidden" 
+               Visibility="Hidden" HorizontalAlignment="Right" Height="300" Margin="0,13,111,0" VerticalAlignment="Top" Width="500"/>
+
+
+        <Canvas Grid.Column="0" Grid.Row="0" Background="White" Grid.RowSpan="3" Margin="0,-5,0,-10" />
+
+        <Canvas Grid.Row="0" Grid.Column="0"  Height="13" Grid.ColumnSpan="2" Background="Gray" Margin="5,-3,0,2"/>
+
+        <y:CustomCalendar x:Name="CustomCalendar" Grid.Row="0" BorderThickness="3" BorderBrush="DodgerBlue"
+                          Grid.Column="1" Grid.RowSpan="4"/>
+
+
+        <!--<Viewbox Visibility="Visible"  Name="CalViewBx" Grid.RowSpan="6" Grid.Column="1"  >
+            <Calendar Visibility="Visible" Name ="Cal" Margin="0,0, 0, 0" Style="{DynamicResource DefaultCalendar}"
+                      SelectedDatesChanged="Cal_SelectedDatesChanged" Height="790"  >
+
+            </Calendar>
+        </Viewbox>-->
+
+
+
+
+
+        <!--<local:CustomDGR></local:CustomDGR>-->
+        <Grid Grid.Column="0" Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="31*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="14*"/>
+                <RowDefinition Height="23*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="156"/>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="13"/>
+                <ColumnDefinition Width="92"/>
+                <ColumnDefinition Width="92"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="105"/>
+            </Grid.ColumnDefinitions>
+
+            <Canvas Background="Gainsboro" Grid.ColumnSpan="17" MaxHeight="75"  Grid.RowSpan="4" Margin="5,0,0,0"/>
+
+
+
+            <!--<GridSplitter Grid.Column="4" Background="black"  Margin="0,15,3,6" Grid.RowSpan="2" Width="1" />
+            <GridSplitter Background="black" Width="1" Grid.Column="7" Margin="0,15,3,6" Grid.RowSpan="2" />
+            <GridSplitter Background="black" Width="1" Grid.Column="14" Margin="0,15,4,6" Grid.RowSpan="2" />
+            <GridSplitter Background="black" Width="1" Grid.Column="9" Margin="0,15,3,6" Grid.RowSpan="2"  />-->
+
+            <Border Grid.Row="0" Name="AvatarBorder" MaxHeight="63" BorderThickness="1" Visibility="Visible" BorderBrush="Black" 
+                    Margin="6,7,6,5" Grid.Column="1" Grid.RowSpan="4">
+                <Image Name="Avatar" MaxHeight="63" Visibility="Visible" Source="Resources/User.png" />
+            </Border>
+            <Button Grid.Column="0" Grid.Row="0"  Margin="8,7,0,5" MaxHeight="24" Grid.RowSpan="2">
+                <StackPanel>
+                    <Image Source="Resources/Profile.png" MaxHeight="24"></Image>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="0" Margin="8,8,0,5" MaxHeight="24" Grid.Row="2" Grid.RowSpan="2">
+                <StackPanel>
+                    <Image Source="Resources/report.png" MaxHeight="24"/>
+                </StackPanel>
+            </Button>
+            <TextBlock Name="UserName" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3" Margin="0,5,0,8" Text="Смирновская Анастасия" 
+                       TextWrapping="Wrap" FontWeight="Bold" MaxHeight="45" Foreground="SlateGray" FontSize="14"/>
+            <ComboBox Grid.Row="0" Grid.Column="3" MaxHeight="18" Margin="2,7,11,6" Grid.ColumnSpan="2"/>
+            <ComboBox Grid.Row="0" Grid.Column="3" MaxHeight="18" Margin="2,29,11,5" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+
+            <TextBox Grid.Column="3" MaxHeight="18" IsReadOnly="True" Margin="2,0,11,5" TextWrapping="Wrap" Grid.Row="3" 
+                     Grid.ColumnSpan="2"/>
+            <ComboBox Grid.Row="0" Grid.Column="5" MaxHeight="18" Margin="10,7,91,6" Grid.ColumnSpan="2"/>
+            <TextBox Name="Tmp3"  Grid.Column="5" MaxHeight="18" Margin="10,0,91,5" TextWrapping="Wrap" Grid.Row="3" 
+                     IsReadOnly="True" Grid.ColumnSpan="2"/>
+            <ComboBox Grid.Row="0" Grid.Column="6" MaxHeight="18" Margin="12,7,7,6" Grid.ColumnSpan="2"/>
+            <TextBox Name="Tmp4" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="3" Margin="12,0,7,5" MaxHeight="18" TextWrapping="Wrap" 
+                     IsReadOnly="True" Background="WhiteSmoke"/>
+            <!--<TextBlock x:Name="Tb1" Background="Transparent" TextWrapping="Wrap" Margin="3,21,0,20" 
+                       Grid.Column="8" Grid.RowSpan="2"
+                       Text = "{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=Title}"
+                       >
+                <InlineUIContainer>
+            		<Image Stretch="Fill" Source="Resources/date.bmp" Margin="0,0,0,0"/>
+            	</InlineUIContainer>
+            </TextBlock>-->
+            <Button Grid.Column="10" Grid.Row="0" Grid.RowSpan="4" Margin="5,22,5,18" Name="AdminSettings" Click="AdminSettings_OnClick"
+                    MaxHeight="35" 
+                    >
+                <Image Source="Resources/admSettings.png"></Image>
+            </Button>
+
+            <Button Grid.Column="11" Grid.Row="0" Grid.RowSpan="4" Margin="5,22,5,18" MaxHeight="35" />
+            <Button Grid.Column="12" Grid.Row="0" Grid.RowSpan="4" Margin="5,22,5,18" MaxHeight="35"/>
+            <Image Grid.Column="15" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="4" Margin="1,18,7,17" Source="Resources/time.bmp" 
+                   MaxHeight="40"/>
+            <TextBlock Grid.Column="16" Grid.Row="0" Grid.RowSpan="4" Margin="3,9,64,21" MaxHeight="42" TextAlignment="Center" 
+                       FontSize="37" Text="19"/>
+            <TextBlock Grid.Column="16" Grid.Row="0" Grid.RowSpan="4" Margin="41,11,20,20" Foreground="White" MaxHeight="42" 
+                       TextAlignment="Center" 
+                       TextWrapping="Wrap" Text="14" FontSize="35"/>
+            <TextBox Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="3" Margin="10,29,91,5" Name="Tmp" FontSize="12" 
+                     MaxHeight="18" TextWrapping="Wrap" IsReadOnly="True"/>
+            <TextBox  Grid.Row="0" Name="Tmp2" Grid.Column="6" MaxHeight="18" Margin="12,29,7,5" TextWrapping="Wrap" Grid.RowSpan="3"
+                     IsReadOnly="True" Grid.ColumnSpan="2"/>
+
+            <Canvas  Grid.Row="0" Background="Black" MaxHeight="63" Grid.Column="4" Margin="12,7,0,4" Grid.RowSpan="4" />
+            <Canvas  Grid.Row="0" Background="Black" Grid.Column="8" MaxHeight="63" Margin="5,7,144,4" Grid.RowSpan="4" />
+            <Canvas  Grid.Row="0" Background="Black" Grid.Column="9" MaxHeight="63" Margin="3,7,6,4" Grid.RowSpan="4" />
+            <Canvas  Grid.Row="0" Background="Black" MaxHeight="63" Grid.Column="15" Margin="5,7,6,4" Grid.RowSpan="4" 
+                     RenderTransformOrigin="0.5,0.5" />
+            <Image Grid.Row="0" Source="Resources/date.bmp" Grid.Column="8" MaxHeight="48" Margin="18,12,9,15" Grid.RowSpan="4"/>
+            <TextBlock Grid.Column="8" Grid.Row="0" Grid.RowSpan="4" Margin="23,8,11,21" x:Name="TimeTextBlock" TextWrapping="Wrap" 
+                       MaxHeight="46"/>
+            <Button Grid.Column="14" Grid.Row="0" Grid.RowSpan="4" Margin="6,22,4,18" Name="ApplCloseBtn" MaxHeight="35"
+                    Click="ApplCloseBtn_OnClick">
+                <StackPanel Width="40">
+                    <Image Source="Resources\exit.ico" Height="35"/>
+
+                </StackPanel>
+            </Button>
+
+
+            <!--<Separator Name="Separator1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top"
+                       RenderTransformOrigin="0.5,0.5" Margin="11,2,32,0" Width="48" Grid.ColumnSpan="2" Grid.Row="1">
+                Height="{Binding ElementName=grdListBoxTest, Path=ActualHeight, }"  
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.855"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>-->
+
+        </Grid>
+
+
+        <Grid Grid.Column="0" Margin="0,9,0,0" Grid.Row="2"  >
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="45" />
+                <ColumnDefinition Width="295"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="22"/>
+                <ColumnDefinition Width="43"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="31"/>
+                <ColumnDefinition Width="31"/>
+                <ColumnDefinition Width="29"/>
+                <ColumnDefinition Width="21"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"  />
+                <RowDefinition Height="58"/>
+            </Grid.RowDefinitions>
+
+            <Canvas Grid.ColumnSpan="2" Grid.Column="0" Background="Transparent" Grid.Row="0" Grid.RowSpan="2" Margin="1,0,4,-3">
+
+                <Button  Height ="64"
+                    Background="#ffefefef" BorderBrush="White" Width="47" BorderThickness="3.5" />
+            </Canvas>
+            <Canvas Background="Gainsboro" Grid.ColumnSpan="4" Grid.Column="1" Margin="1,0,0,0" Grid.Row="1"/>
+            <GridSplitter Height="58"  Width="4" Background="Black" Grid.Column="1" Margin="0,1,0,-1" Grid.Row="1"/>
+
+            <Canvas Background="Gainsboro" Grid.ColumnSpan="8" Grid.Column="5" Grid.Row="1" Margin="42,0,2,0"/>
+            <Label Content="Company" Grid.Row="1" Margin="7,5,9,25" Grid.Column="1"/>
+            <TextBox Name="CompanyNameBx" Grid.Row="1" TextWrapping="Wrap"  Margin="69,8,9,29" Grid.Column="1" />
+            <Label Content="Base" Margin="1,28,114,5" Grid.Column="3" Grid.Row="1"/>
+            <Canvas Background="Gainsboro" Grid.Column="5" Grid.Row="1" Margin="2,0,3,0"/>
+            <Label Name="Lable" Content="Code" Grid.Column="1" Margin="8,27,10,4" Grid.Row="1"/>
+            <TextBox Name="BaseBx" TextWrapping="Wrap" Margin="69,32,9,6" Grid.Row="1" Grid.Column="1"/>
+
+
+
+            <TextBox Name="CodeBx" Grid.Column="3" TextWrapping="Wrap" Margin="40,32,0,6" Grid.Row="1"/>
+
+
+            <Label Content="User" Grid.Column="3" Grid.Row="1" Margin="1,4,114,30"/>
+            <TextBox Name="UserBx" Grid.Column="3" Grid.Row="1" TextWrapping="Wrap" Margin="40,8,0,29" />
+            <Button Name="AddToDB" Margin="15,8,10,6" Grid.Column="2" Click="AddToDB_Click" Grid.Row="1">
+                <StackPanel Width="40">
+                    <Image Source="Resources\addToDB.png" Height="35"/>
+
+                </StackPanel>
+            </Button>
+
+            
+
+            <Canvas Grid.Column="0" Grid.ColumnSpan="17" Grid.Row="1" Margin="5,60,1,-10" Background="Gray"/>
+            <Button Grid.Column="4" Grid.Row="1" Margin="4,36,4,8"/>
+            <Button Grid.Column="4" Grid.Row="1" Margin="4,12,4,32"/>
+            <Button Grid.Column="5" Grid.Row="1" Margin="5,1,5,27">
+                <StackPanel>
+                    <Image Source="Resources/defaultParams.bmp"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="5" Grid.Row="1" Margin="5,30,5,0">
+                <StackPanel>
+                    <Image Source="Resources/cogwheel.png" Height="25" Width="30"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="6" Grid.Row="1" Height="35" Width="35" Margin="5,12,5,10"/>
+            <Button Grid.Column="7" Grid.Row="1" Height="35" Width="35" Margin="5,12,5,10"/>
+            <Button Grid.Column="8" Grid.Row="1" Height="35" Width="35" Margin="5,12,5,10"/>
+            <Button Grid.Column="10" Grid.Row="1" Height="35" Width="35" Margin="1,13,9,10"/>
+            <Button Grid.Column="11" Grid.Row="1" Height="35" Width="35" Margin="1,13,9,10"/>
+            <Button Grid.Column="12" Grid.Row="1" Height="35" Width="35" Margin="1,13,9,10"/>
+            <Button BorderThickness="1" Content="@" Grid.Column="13" Margin="3,30,0,0" FontWeight="Bold" Grid.Row="1" 
+                    FontSize="17"/>
+            <Canvas Background="Black" Grid.Column="13" MaxHeight="63" Height="58" Margin="0,0,30,3" Width="1" Grid.Row="1" />
+            <Button BorderThickness="1" Grid.Column="13" Margin="3,0,0,30" FontWeight="Bold" 
+                    Grid.Row="1" FontSize="16">
+                <Image Source="Resources/pencil.png" Height="18"></Image>
+            </Button>
+            <Button BorderThickness="1" Content="С" Grid.Column="14" Margin="2,0,1,30" FontWeight="Bold" 
+                     Grid.Row="1" FontSize="17"/>
+            <Button BorderThickness="1" Content="М" Grid.Column="14" Margin="2,30,1,0" FontWeight="Bold" Grid.Row="1" 
+                    FontSize="17"/>
+            <Button BorderThickness="1" Content="$" Grid.Column="15" Margin="1,0,0,30" FontWeight="Bold" Grid.Row="1" FontSize="17"/>
+            <Button BorderThickness="1" Content="А" Grid.Column="15" Margin="1,30,0,0" FontWeight="Bold" Grid.Row="1" 
+                    FontSize="17"/>
+            <Canvas Grid.Column="16" Grid.Row="0" Grid.RowSpan="2" Margin="2,0,1,-8" Background="Gray"/>
+            <Frame x:Name="AddToDbFrame" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Margin="1,1,0,-183" BorderBrush="Blue" 
+                   BorderThickness="2" Panel.ZIndex="1000" NavigationUIVisibility="Hidden" Height="240"  Visibility="Hidden"/>
+            <Canvas Grid.Column="0" Grid.ColumnSpan="17" Grid.Row="0" Margin="5,-7,1,2" Background="Gray"/>
+            <Canvas Background="Black" Grid.Column="5" MaxHeight="63" Height="58" Margin="41,0,1,0" Width="1" Grid.Row="1" />
+            <Canvas Background="Black" Grid.Column="5" MaxHeight="63" Height="58" Margin="0,0,42,0" Width="1" Grid.Row="1" />
+        </Grid>
+        <Frame Name="AdminSettingsFrame" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" Content="Frame" Grid.ColumnSpan="2" 
+                       Background="Red" NavigationUIVisibility="Hidden" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+               Visibility="Hidden"/>
+
+        
+    </Grid>
+
+</Window>

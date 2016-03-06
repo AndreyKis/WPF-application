@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище clientdbModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="companyId" />
+    </Key>
+    <Property Name="companyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cdepartmentId" Type="int" Nullable="false" />
+    <Property Name="companyCode" Type="int" />
+    <Property Name="companyHead" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="companyDate" Type="datetime" Precision="0" />
+    <Property Name="companyComment" Type="longtext" />
+    <Property Name="companyPayment" Type="text" />
+    <Property Name="companyEdition" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="company_contact">
+    <Key>
+      <PropertyRef Name="company_contactId" />
+    </Key>
+    <Property Name="company_contactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ccCompanyId" Type="int" Nullable="false" />
+    <Property Name="ccContactId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="company_user">
+    <Key>
+      <PropertyRef Name="company_userId" />
+    </Key>
+    <Property Name="company_userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cucompanyId" Type="int" Nullable="false" />
+    <Property Name="cuuserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="contactId" />
+    </Key>
+    <Property Name="contactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contact" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="holderId" Type="int" Nullable="false" />
+    <Property Name="contactType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contactholder">
+    <Key>
+      <PropertyRef Name="contactHolderId" />
+    </Key>
+    <Property Name="contactHolderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="80" />
+    <Property Name="level" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="departmentId" />
+    </Key>
+    <Property Name="departmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="privacylvl">
+    <Key>
+      <PropertyRef Name="privacyLvlId" />
+    </Key>
+    <Property Name="privacyLvlId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="groupNumber" Type="smallint" Nullable="false" />
+    <Property Name="persInfo" Type="smallint" Nullable="false" />
+    <Property Name="redact" Type="smallint" Nullable="false" />
+    <Property Name="letter" Type="smallint" Nullable="false" />
+    <Property Name="agreement" Type="smallint" Nullable="false" />
+    <Property Name="layout" Type="smallint" Nullable="false" />
+    <Property Name="payment" Type="smallint" Nullable="false" />
+    <Property Name="act" Type="smallint" Nullable="false" />
+    <Property Name="columnName" Type="smallint" Nullable="false" />
+    <Property Name="columnDepartment" Type="smallint" Nullable="false" />
+    <Property Name="columnCode" Type="smallint" Nullable="false" />
+    <Property Name="columnFullName" Type="smallint" Nullable="false" />
+    <Property Name="columnContacts" Type="smallint" Nullable="false" />
+    <Property Name="columnState" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="patronymic" Type="varchar" MaxLength="40" />
+    <Property Name="surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="accessLvl" Type="int" Nullable="false" />
+    <Property Name="group" Type="int" />
+  </EntityType>
+  <Association Name="ccCompany_company">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="company_contact" Type="Self.company_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companyId" />
+      </Principal>
+      <Dependent Role="company_contact">
+        <PropertyRef Name="ccCompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ccContact_contact">
+    <End Role="contact" Type="Self.contact" Multiplicity="1" />
+    <End Role="company_contact" Type="Self.company_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contact">
+        <PropertyRef Name="contactId" />
+      </Principal>
+      <Dependent Role="company_contact">
+        <PropertyRef Name="ccContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Company_Department">
+    <End Role="department" Type="Self.department" Multiplicity="1" />
+    <End Role="company" Type="Self.company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department">
+        <PropertyRef Name="departmentId" />
+      </Principal>
+      <Dependent Role="company">
+        <PropertyRef Name="cdepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="contact_holder">
+    <End Role="contactholder" Type="Self.contactholder" Multiplicity="1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contactholder">
+        <PropertyRef Name="contactHolderId" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="holderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cuComppany_company">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="company_user" Type="Self.company_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companyId" />
+      </Principal>
+      <Dependent Role="company_user">
+        <PropertyRef Name="cucompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cuUser_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="company_user" Type="Self.company_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="company_user">
+        <PropertyRef Name="cuuserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_privacyLvl">
+    <End Role="privacylvl" Type="Self.privacylvl" Multiplicity="1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="privacylvl">
+        <PropertyRef Name="privacyLvlId" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="accessLvl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище clientdbModelContainer">
+    <EntitySet Name="company" EntityType="Self.company" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="company_contact" EntityType="Self.company_contact" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="company_user" EntityType="Self.company_user" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="contactholder" EntityType="Self.contactholder" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="department" EntityType="Self.department" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="privacylvl" EntityType="Self.privacylvl" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="clientdb" store:Type="Tables" />
+    <AssociationSet Name="ccCompany_company" Association="Self.ccCompany_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="company_contact" EntitySet="company_contact" />
+    </AssociationSet>
+    <AssociationSet Name="ccContact_contact" Association="Self.ccContact_contact">
+      <End Role="contact" EntitySet="contact" />
+      <End Role="company_contact" EntitySet="company_contact" />
+    </AssociationSet>
+    <AssociationSet Name="Company_Department" Association="Self.Company_Department">
+      <End Role="department" EntitySet="department" />
+      <End Role="company" EntitySet="company" />
+    </AssociationSet>
+    <AssociationSet Name="contact_holder" Association="Self.contact_holder">
+      <End Role="contactholder" EntitySet="contactholder" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+    <AssociationSet Name="cuComppany_company" Association="Self.cuComppany_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="company_user" EntitySet="company_user" />
+    </AssociationSet>
+    <AssociationSet Name="cuUser_user" Association="Self.cuUser_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="company_user" EntitySet="company_user" />
+    </AssociationSet>
+    <AssociationSet Name="user_privacyLvl" Association="Self.user_privacyLvl">
+      <End Role="privacylvl" EntitySet="privacylvl" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

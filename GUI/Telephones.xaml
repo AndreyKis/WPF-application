@@ -1,0 +1,85 @@
+﻿<Page x:Class="GUI.Telephones"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="240" d:DesignWidth="228"
+	Title="Telephones">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <!--<Setter Property="Padding" Value="0,1"/>-->
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Silver"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid Background="Gainsboro">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+        </Grid.RowDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,1,0,0" TextWrapping="Wrap" Text="+7" VerticalAlignment="Top" Width="26"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="31,1,0,0" TextWrapping="Wrap" Text="4954" VerticalAlignment="Top" 
+                 Width="33"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="67,1,0,0" TextWrapping="Wrap" Text="945-2309" VerticalAlignment="Top" 
+                 Width="68"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,1,0,0" VerticalAlignment="Top" Width="88" Height="19"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="+7" VerticalAlignment="Top" Width="26" Grid.Row="1" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="31,4,0,0" TextWrapping="Wrap" Text="4954" VerticalAlignment="Top" Width="33" Grid.Row="1" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="67,4,0,0" TextWrapping="Wrap" Text="945-2309" VerticalAlignment="Top" Width="68" Grid.Row="1" Grid.RowSpan="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="+7" VerticalAlignment="Top" Width="26" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="31,4,0,0" TextWrapping="Wrap" Text="4954" VerticalAlignment="Top" Width="33" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="67,4,0,0" TextWrapping="Wrap" Text="945-2309" VerticalAlignment="Top" Width="68" Grid.Row="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="+7" VerticalAlignment="Top" Width="26" Grid.Row="3"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="31,4,0,0" TextWrapping="Wrap" Text="4954" VerticalAlignment="Top" Width="33" Grid.Row="3"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="67,4,0,0" TextWrapping="Wrap" Text="945-2309" VerticalAlignment="Top" Width="68" Grid.Row="3"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="3"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="+7" VerticalAlignment="Top" Width="26" Grid.Row="4"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="31,4,0,0" TextWrapping="Wrap" Text="4954" VerticalAlignment="Top" Width="33" Grid.Row="4"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="67,4,0,0" TextWrapping="Wrap" Text="945-2309" VerticalAlignment="Top" Width="68" Grid.Row="4"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="4"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="www.olimp.stroy.montagh.com" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="224" Grid.Row="5"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="jilimp.stroy@gmail.com" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="133" Grid.Row="6"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="6"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="jilimp.stroy@gmail.com" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="133" Grid.Row="7"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="7"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,5,0,0" TextWrapping="Wrap" Text="jilimp.stroy@gmail.com" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="133" Grid.Row="8" Grid.RowSpan="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,5,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="8"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="2,4,0,0" TextWrapping="Wrap" Text="jilimp.stroy@gmail.com" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="133" Grid.Row="9"/>
+        <ComboBox HorizontalAlignment="Left" Margin="138,4,0,0" VerticalAlignment="Top" Width="88" Height="19" Grid.Row="9"/>
+        <Button Grid.Row="0" Content="x" Name="CloseBtn" FontSize="14" BorderThickness="0" Padding="0,-4,0,0" HorizontalAlignment="Left" 
+                Margin="211,0,0,1" VerticalAlignment="Top" Width="13" Opacity="0"
+                MouseEnter="CloseBtn_OnMouseEnter" MouseLeave="CloseBtn_OnMouseLeave" Click="CloseBtn_OnClick"/>
+    </Grid>
+</Page>

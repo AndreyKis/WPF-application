@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище clientdbModelContainer" CdmEntityContainer="clientdbEntities">
+    <EntitySetMapping Name="company">
+      <EntityTypeMapping TypeName="clientdbModel.company">
+        <MappingFragment StoreEntitySet="company">
+          <ScalarProperty Name="idCompany" ColumnName="idCompany" />
+          <ScalarProperty Name="idDepartment" ColumnName="idDepartment" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="edition" ColumnName="edition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="record">
+      <EntityTypeMapping TypeName="clientdbModel.record">
+        <MappingFragment StoreEntitySet="record">
+          <ScalarProperty Name="idRecord" ColumnName="idRecord" />
+          <ScalarProperty Name="idCompany" ColumnName="idCompany" />
+          <ScalarProperty Name="Head" ColumnName="Head" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="telephone">
+      <EntityTypeMapping TypeName="clientdbModel.telephone">
+        <MappingFragment StoreEntitySet="telephone">
+          <ScalarProperty Name="idTelephone" ColumnName="idTelephone" />
+          <ScalarProperty Name="countryCode" ColumnName="countryCode" />
+          <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="idCompany" ColumnName="idCompany" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

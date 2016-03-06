@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище clientdbModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="idCompany" />
+    </Key>
+    <Property Name="idCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDepartment" Type="int" Nullable="false" />
+    <Property Name="code" Type="int" />
+    <Property Name="edition" Type="int" />
+  </EntityType>
+  <EntityType Name="record">
+    <Key>
+      <PropertyRef Name="idRecord" />
+    </Key>
+    <Property Name="idRecord" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCompany" Type="int" Nullable="false" />
+    <Property Name="Head" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Date" Type="datetime" Precision="0" />
+    <Property Name="Comment" Type="longtext" />
+    <Property Name="Payment" Type="int" />
+  </EntityType>
+  <EntityType Name="telephone">
+    <Key>
+      <PropertyRef Name="idTelephone" />
+    </Key>
+    <Property Name="idTelephone" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryCode" Type="int" Nullable="false" />
+    <Property Name="cityCode" Type="int" Nullable="false" />
+    <Property Name="tel" Type="int" Nullable="false" />
+    <Property Name="idCompany" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="recComp-comp">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="record" Type="Self.record" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="idCompany" />
+      </Principal>
+      <Dependent Role="record">
+        <PropertyRef Name="idCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="telephone-company">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="telephone" Type="Self.telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="idCompany" />
+      </Principal>
+      <Dependent Role="telephone">
+        <PropertyRef Name="idCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище clientdbModelContainer">
+    <EntitySet Name="company" EntityType="Self.company" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="record" EntityType="Self.record" Schema="clientdb" store:Type="Tables" />
+    <EntitySet Name="telephone" EntityType="Self.telephone" Schema="clientdb" store:Type="Tables" />
+    <AssociationSet Name="recComp-comp" Association="Self.recComp-comp">
+      <End Role="company" EntitySet="company" />
+      <End Role="record" EntitySet="record" />
+    </AssociationSet>
+    <AssociationSet Name="telephone-company" Association="Self.telephone-company">
+      <End Role="company" EntitySet="company" />
+      <End Role="telephone" EntitySet="telephone" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
